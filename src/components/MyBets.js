@@ -1,5 +1,4 @@
 import React from "react";
-import "./mybets.module.css";
 
 function MyBets(props) {
   const myBets = props.bets.map((bet) => {

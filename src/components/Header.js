@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from "./Nav";
-import "./header.module.css";
 import Balance from "./Balance";
 
 function Header() {

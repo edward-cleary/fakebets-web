@@ -1,5 +1,4 @@
 import React from "react";
-import "./upcomingcards.module.css";
 import FightCardList from "./FightCardList";
 
 function UpcomingCards(props) {
