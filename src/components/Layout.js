@@ -10,6 +10,7 @@ import {
   MantineProvider,
   ColorSchemeProvider,
   ColorScheme,
+  Global,
 } from "@mantine/core";
 import { NavbarSimple } from "./NavbarSimple";
 
@@ -26,7 +27,12 @@ const Layout = ({ children }) => {
       toggleColorScheme={toggleColorScheme}
     >
       <MantineProvider
-        theme={{ colorScheme: colorScheme }}
+        theme={{
+          colorScheme: colorScheme,
+          primaryColor: "green",
+          primaryShade: { light: 9, dark: 9 },
+          white: "#DEE2E6",
+        }}
         withGlobalStyles
         withNormalizeCSS
       >
@@ -46,6 +52,7 @@ const Layout = ({ children }) => {
                 alignItems: "center",
                 justifyContent: "space-between",
                 padding: "0 20px",
+                borderColor: colorScheme === "dark" ? "#2C2E33" : "black",
               }}
             >
               <FakeBetsLogo size="25" />

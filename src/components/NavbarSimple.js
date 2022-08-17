@@ -60,6 +60,10 @@ const useStyles = createStyles((theme, _params, getRef) => {
           .color,
       },
     },
+
+    nav: {
+      borderColor: theme.colorScheme === "dark" ? "#2C2E33" : "black",
+    },
   };
 });
 
@@ -94,6 +98,7 @@ export function NavbarSimple(props) {
       hidden={!props.opened}
       width={{ sm: 200 }}
       p="xs"
+      className={classes.nav}
     >
       <Navbar.Section grow>{links}</Navbar.Section>
       <Navbar.Section>

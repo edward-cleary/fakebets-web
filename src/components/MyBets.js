@@ -15,7 +15,8 @@ import { useClickOutside } from "@mantine/hooks";
 const useStyles = createStyles((theme, _params, getRef) => {
   return {
     wrapper: {
-      border: `1px solid ${theme.colors.gray[2]}`,
+      border: `1px solid`,
+      borderColor: theme.colorScheme === "dark" ? "#5C5F66" : "black",
       borderRadius: "15px",
       maxWidth: "400px",
       padding: "13px",
@@ -86,7 +87,13 @@ function MyBets(props) {
         >
           {(styles) => (
             <Group
-              style={{ position: "absolute", width: "100%", height: "100%" }}
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
             >
               <Button
                 style={{

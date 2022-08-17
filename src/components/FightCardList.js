@@ -12,7 +12,8 @@ import {
 const useStyles = createStyles((theme, _params, getRef) => {
   return {
     listItem: {
-      borderTop: `1px solid ${theme.colors.gray[2]}`,
+      borderTop: `1px solid`,
+      borderColor: theme.colorScheme === "dark" ? "#5C5F66" : "black",
     },
   };
 });

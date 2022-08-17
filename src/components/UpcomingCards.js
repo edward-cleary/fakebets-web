@@ -6,7 +6,8 @@ import { ClassNames } from "@emotion/react";
 const useStyles = createStyles((theme, _params, getRef) => {
   return {
     wrapper: {
-      border: `1px solid ${theme.colors.gray[2]}`,
+      border: `1px solid`,
+      borderColor: theme.colorScheme === "dark" ? "#5C5F66" : "black",
       borderRadius: "15px",
       maxWidth: "400px",
       listStyle: "none",
