@@ -3,6 +3,7 @@ import { useState } from "react";
 import { createStyles, Navbar, Text } from "@mantine/core";
 import { IconLogout } from "@tabler/icons";
 import { Link } from "gatsby";
+import DarkModeSwitch from "./DarkModeSwitch";
 
 const useStyles = createStyles((theme, _params, getRef) => {
   return {
@@ -92,10 +93,12 @@ export function NavbarSimple(props) {
       hiddenBreakpoint="sm"
       hidden={!props.opened}
       width={{ sm: 200 }}
-      height="100vh"
       p="xs"
     >
       <Navbar.Section grow>{links}</Navbar.Section>
+      <Navbar.Section>
+        <DarkModeSwitch />
+      </Navbar.Section>
     </Navbar>
   );
 }

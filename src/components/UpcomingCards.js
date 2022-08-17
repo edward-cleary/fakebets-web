@@ -46,7 +46,9 @@ function UpcomingCards(props) {
       <Title order={3} my={20}>
         Upcoming Cards
       </Title>
-      <Stack sx={{ width: "100%" }}>{upcomingcards}</Stack>
+      <Stack align="center" sx={{ width: "100%" }}>
+        {upcomingcards}
+      </Stack>
     </Stack>
   );
 }
