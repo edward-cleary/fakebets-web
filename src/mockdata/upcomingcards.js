@@ -10,11 +10,13 @@ export const UPCOMINGCARDS = [
           name: "Israel Adesanya",
           image: "https://picsum.photos/200/200?random",
           odds: "-300",
+          record: "20-1-0",
         },
         away: {
           name: "Michael Pereira",
           image: "https://picsum.photos/200/200?random",
           odds: "+200",
+          record: "20-1-0",
         },
       },
       {
@@ -23,11 +25,13 @@ export const UPCOMINGCARDS = [
           name: "Timbuck Two",
           image: "https://picsum.photos/200/200?random",
           odds: "+200",
+          record: "20-1-0",
         },
         away: {
           name: "Franz Ferdinand",
           image: "https://picsum.photos/200/200?random",
           odds: "-200",
+          record: "20-1-0",
         },
       },
     ],

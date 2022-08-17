@@ -5,6 +5,9 @@ import {
   GroupedTransition,
   Button,
   Group,
+  Box,
+  Text,
+  Title,
 } from "@mantine/core";
 import { useState } from "react";
 import { useClickOutside } from "@mantine/hooks";
@@ -19,6 +22,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
       listStyle: "none",
       position: "relative",
       overflow: "hidden",
+      cursor: "pointer",
     },
   };
 });
@@ -48,17 +52,17 @@ function MyBets(props) {
         ref={clickOutsideRef}
       >
         <Stack spacing="xl">
-          <div>
-            <span>{`${bet.choice.split(" ").pop()}`}</span>
+          <Box>
+            <Text>{`${bet.choice.split(" ").pop()}`}</Text>
             {` vs. ${bet.opponent.split(" ").pop()}`}
-          </div>
-          <div>{`${bet.event_name} | ${bet.event_date.split(",")[0]}`}</div>
+          </Box>
+          <Text>{`${bet.event_name} | ${bet.event_date.split(",")[0]}`}</Text>
         </Stack>
         <Stack spacing="xl">
-          <div
+          <Text
             style={{ color: "green", fontWeight: 700 }}
-          >{`To Win: ${bet.to_win}`}</div>
-          <div style={{ color: "darkred" }}>{`Wager: ${bet.wager}`}</div>
+          >{`To Win: ${bet.to_win}`}</Text>
+          <Text style={{ color: "darkred" }}>{`Wager: ${bet.wager}`}</Text>
         </Stack>
         <GroupedTransition
           mounted={opened}
@@ -108,7 +112,7 @@ function MyBets(props) {
               >
                 Cancel
               </Button>
-              <div
+              <Box
                 style={{
                   ...styles.blurBet,
                   position: "absolute",
@@ -119,7 +123,7 @@ function MyBets(props) {
                   top: 0,
                   bottom: 0,
                 }}
-              ></div>
+              ></Box>
             </Group>
           )}
         </GroupedTransition>
@@ -128,10 +132,10 @@ function MyBets(props) {
   }
 
   return (
-    <section>
-      <h3>My Bets</h3>
+    <Stack align="center" justify="start">
+      <Title>My Bets</Title>
       <Stack spacing="xl">{myBets}</Stack>
-    </section>
+    </Stack>
   );
 }
 

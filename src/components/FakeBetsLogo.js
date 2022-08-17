@@ -1,5 +1,5 @@
 import React from "react";
-import { createStyles } from "@mantine/core";
+import { createStyles, Box, Title } from "@mantine/core";
 import { CrumpledPaperIcon } from "@radix-ui/react-icons";
 
 const useStyles = createStyles((theme, _params, getRef) => ({
@@ -9,10 +9,11 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   text: {
     paddingLeft: "10px",
+    fontSize: "25px",
   },
   icon: {
-    width: "20px",
-    height: "20px",
+    width: "30px",
+    height: "30px",
   },
 }));
 
@@ -20,10 +21,12 @@ const FakeBetsLogo = () => {
   const { classes } = useStyles();
 
   return (
-    <div className={classes.wrapper}>
+    <Box className={classes.wrapper}>
       <CrumpledPaperIcon className={classes.icon} />
-      <div className={classes.text}>Fake Bets</div>
-    </div>
+      <Title className={classes.text} order={1}>
+        Fake Bets
+      </Title>
+    </Box>
   );
 };
 

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { MantineProvider } from "@mantine/core";
 import { AppShell, Navbar, Header } from "@mantine/core";
 import FakeBetsLogo from "./FakeBetsLogo";
 import Balance from "./Balance";
 import { Burger } from "@mantine/core";
-import { MediaQuery } from "@mantine/core";
+import {
+  MediaQuery,
+  withNormalizeCSS,
+  withGlobalStyles,
+  MantineProvider,
+} from "@mantine/core";
 import { NavbarSimple } from "./NavbarSimple";
 
 const Layout = ({ children }) => {
@@ -27,11 +31,11 @@ const Layout = ({ children }) => {
         header={
           <Header
             height={60}
-            p="xs"
             sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
+              padding: "0 20px",
             }}
           >
             <FakeBetsLogo size="25" />

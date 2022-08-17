@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { createStyles, Navbar } from "@mantine/core";
+import { createStyles, Navbar, Text } from "@mantine/core";
 import { IconLogout } from "@tabler/icons";
 import { Link } from "gatsby";
 
@@ -83,7 +83,7 @@ export function NavbarSimple(props) {
         props.handleClick();
       }}
     >
-      <span>{item.label}</span>
+      <Text>{item.label}</Text>
     </Link>
   ));
 
