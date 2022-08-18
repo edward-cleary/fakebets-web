@@ -1,7 +1,6 @@
 import React from "react";
 import FightCardList from "./FightCardList";
-import { Stack, Group, createStyles, Title, Text } from "@mantine/core";
-import { ClassNames } from "@emotion/react";
+import { Stack, createStyles, Title, Text } from "@mantine/core";
 
 const useStyles = createStyles((theme, _params, getRef) => {
   return {
@@ -9,7 +8,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
       border: `1px solid`,
       borderColor: theme.colorScheme === "dark" ? "#5C5F66" : "black",
       borderRadius: "15px",
-      maxWidth: "400px",
+      width: "100%",
       listStyle: "none",
       position: "relative",
       cursor: "pointer",
@@ -37,7 +36,7 @@ function UpcomingCards(props) {
           </Title>
           <Text>Sat, Aug 20, 8:00PM</Text>
         </Stack>
-        <FightCardList fights={card.fights} />
+        <FightCardList card={card} />
       </Stack>
     );
   }
