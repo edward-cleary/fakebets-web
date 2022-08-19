@@ -9,6 +9,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
       borderColor: theme.colorScheme === "dark" ? "#5C5F66" : "black",
       borderRadius: "15px",
       width: "100%",
+      maxWidth: "500px",
       listStyle: "none",
       position: "relative",
       cursor: "pointer",

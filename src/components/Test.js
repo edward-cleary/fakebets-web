@@ -1,23 +1,14 @@
 import React, { useState } from "react";
-import { Button, Collapse, Stack } from "@mantine/core";
+import { Button, Collapse, Radio, Stack } from "@mantine/core";
 
 function Test() {
-  const [opened, setOpened] = useState(false);
+  const [value, setValue] = useState("test");
 
   return (
-    <Stack sx={{ border: "1px solid black" }}>
-      <Button onClick={() => setOpened((o) => !o)}>Toggle content</Button>
-
-      <Collapse in={opened} transitionDuration={1000}>
-        <h1>Test </h1>
-        <p>
-          This is just a test. This is just a test. This is just a test. This is
-          just a test. This is just a test. This is just a test. This is just a
-          test. This is just a test. This is just a test. This is just a test.
-          This is just a test. This is just a test. This is just a test.{" "}
-        </p>
-      </Collapse>
-    </Stack>
+    <Radio.Group value={value} onChange={setValue} required>
+      <Radio value="test" label="Test" />
+      <Radio value="test2" label="Test2" />
+    </Radio.Group>
   );
 }
 

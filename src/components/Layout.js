@@ -17,7 +17,7 @@ import { NavbarSimple } from "./NavbarSimple";
 const Layout = ({ children }) => {
   const [opened, setOpened] = useState(false);
   const title = opened ? "Close navigation" : "Open navigation";
-  const [colorScheme, setColorScheme] = useState("light");
+  const [colorScheme, setColorScheme] = useState("dark");
   const toggleColorScheme = () =>
     setColorScheme(colorScheme === "dark" ? "light" : "dark");
 

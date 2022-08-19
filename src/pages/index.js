@@ -1,13 +1,12 @@
 import React from "react";
 import MyBets from "./../components/MyBets";
-import Test from "./../components/Test";
 import { MYBETS } from "./../mockdata/mybets.js";
+import Test from "../components/Test";
 
 const IndexPage = () => {
   return (
     <>
       <MyBets bets={MYBETS} />
-      <Test />
     </>
   );
 };

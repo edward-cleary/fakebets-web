@@ -72,14 +72,14 @@ function FightCardList({ card }) {
                 <Title order={6}>{fight.away.name}</Title>
                 <Text size="sm">{fight.away.record}</Text>
               </Stack>
-              <Collapse
-                in={opened}
-                transitionDuration={300}
-                transitionTimingFunction="ease-in"
-              >
-                <BetSelect fight={fight} card={card} />
-              </Collapse>
             </Group>
+            <Collapse
+              in={opened}
+              transitionDuration={100}
+              transitionTimingFunction="ease-in"
+            >
+              <BetSelect fight={fight} card={card} />
+            </Collapse>
           </Box>
         </List.Item>
       </>
