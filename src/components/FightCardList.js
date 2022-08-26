@@ -44,12 +44,16 @@ function FightCardList({ card }) {
           className={classes.listItem}
         >
           <Box ref={clickOutsideRef}>
-            <Group p={15} position="apart" sx={{ minWidth: "100%" }}>
+            <Group
+              p={15}
+              position="apart"
+              sx={{ minWidth: "100%", flexWrap: "nowrap" }}
+            >
               <Stack spacing="0" align="center" sx={{ width: "130px" }}>
                 <Image
                   radius="md"
-                  height="60px"
-                  width="60px"
+                  height="50px"
+                  width="50px"
                   src={fight.home.image}
                   alt={fight.home.name}
                   mb={15}
@@ -63,8 +67,8 @@ function FightCardList({ card }) {
               <Stack spacing="0" align="center" sx={{ width: "130px" }}>
                 <Image
                   radius="md"
-                  height="60px"
-                  width="60px"
+                  height="50px"
+                  width="50px"
                   src={fight.away.image}
                   alt={fight.away.name}
                   mb={15}

@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { createStyles, Box, Stack, Group, Text } from "@mantine/core";
+import { createStyles, Box, Stack, Group, Text, Radio } from "@mantine/core";
 import PlaceBetInput from "./PlaceBetInput";
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   wrapper: {
-    width: "80%",
+    width: "100%",
+    maxWidth: "310px",
     margin: "0 auto",
     position: "relative",
     padding: "30px",
@@ -19,13 +20,14 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     left: 0,
     right: 0,
     bottom: 0,
-    border: "3px solid",
+    border: `2px solid ${theme.colors.gray[7]}`,
+    width: "100%",
     borderRadius: "10px",
     display: "flex",
     justifyContent: "space-between",
     padding: "15px",
     [`.${getRef("input")}:checked + &`]: {
-      border: "3px solid green",
+      border: "2px solid green",
     },
   },
   labelgroup: {
@@ -33,19 +35,15 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   inputwrapper: {
     width: "80%",
-    margin: "0 auto",
+    marginTop: "40px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginBottom: "15px",
   },
 }));
 
 function BetSelect({ fighter, radioValue, handleRadioChange }) {
   const { classes, cx } = useStyles();
-
-  const renderCount = useRef(1);
-
-  useEffect(() => {
-    renderCount.current = renderCount.current + 1;
-    console.log("i rendered " + renderCount.current + " times");
-  }, [radioValue]);
 
   return (
     <>
@@ -57,9 +55,6 @@ function BetSelect({ fighter, radioValue, handleRadioChange }) {
         className={classes.input}
         checked={radioValue === fighter.name}
         onChange={handleRadioChange}
-        onClick={() => console.log("clicked")}
-        onFocus={() => console.log("focused")}
-        onBlur={() => console.log("BLURRED")}
       ></input>
       <label className={classes.label} htmlFor={fighter.name}>
         <Group className={classes.labelgroup} position="apart">
@@ -80,27 +75,25 @@ function BetSelectList({ card, fight }) {
     setRadioValue(changeEvent.target.value);
   };
 
-  useEffect(() => {
-    console.log("radio value is now " + radioValue);
-  }, [radioValue]);
-
   return (
     <Stack>
       <form>
-        <Box className={classes.wrapper}>
-          <BetSelect
-            fighter={fight.home}
-            handleRadioChange={handleRadioChange}
-            radioValue={radioValue}
-          />
-        </Box>
-        <Box className={classes.wrapper}>
-          <BetSelect
-            fighter={fight.away}
-            handleRadioChange={handleRadioChange}
-            radioValue={radioValue}
-          />
-        </Box>
+        <Stack>
+          <Box className={classes.wrapper}>
+            <BetSelect
+              fighter={fight.home}
+              handleRadioChange={handleRadioChange}
+              radioValue={radioValue}
+            />
+          </Box>
+          <Box className={classes.wrapper}>
+            <BetSelect
+              fighter={fight.away}
+              handleRadioChange={handleRadioChange}
+              radioValue={radioValue}
+            />
+          </Box>
+        </Stack>
         <Box className={classes.inputwrapper}>
           <PlaceBetInput
             odds={

@@ -18,12 +18,16 @@ const useStyles = createStyles((theme, _params, getRef) => {
       border: `1px solid`,
       borderColor: theme.colorScheme === "dark" ? "#5C5F66" : "black",
       borderRadius: "15px",
-      maxWidth: "400px",
+      maxWidth: "500px",
+      width: "100%",
       padding: "13px",
       listStyle: "none",
       position: "relative",
       overflow: "hidden",
       cursor: "pointer",
+    },
+    wagerText: {
+      color: theme.colors.gray[7],
     },
   };
 });
@@ -54,8 +58,10 @@ function MyBets(props) {
       >
         <Stack spacing="xl">
           <Box>
-            <Text>{`${bet.choice.split(" ").pop()}`}</Text>
-            {` vs. ${bet.opponent.split(" ").pop()}`}
+            <Text>
+              {`${bet.choice.split(" ").pop()}`}{" "}
+              {` vs. ${bet.opponent.split(" ").pop()}`}
+            </Text>
           </Box>
           <Text>{`${bet.event_name} | ${bet.event_date.split(",")[0]}`}</Text>
         </Stack>
@@ -63,7 +69,7 @@ function MyBets(props) {
           <Text
             style={{ color: "green", fontWeight: 700 }}
           >{`To Win: ${bet.to_win}`}</Text>
-          <Text style={{ color: "darkred" }}>{`Wager: ${bet.wager}`}</Text>
+          <Text>{`Wager: ${bet.wager}`}</Text>
         </Stack>
         <GroupedTransition
           mounted={opened}
